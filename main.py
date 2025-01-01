@@ -51,6 +51,12 @@ def main():
             if item.collision(player):
                 print("Game over!")
                 return # Quit the game if a collision with the player is detected
+            
+            # Kill the bullet and asteroid if there is a collision of an asteroid and a bullet, will eventually add splitting
+            for bullet in shots:
+                if item.collision(bullet):
+                    item.kill()
+                    bullet.kill()
 
         # Draw all drawables
         for item in drawable:
