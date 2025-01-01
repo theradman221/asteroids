@@ -55,7 +55,7 @@ def main():
             # Kill the bullet and asteroid if there is a collision of an asteroid and a bullet, will eventually add splitting
             for bullet in shots:
                 if item.collision(bullet):
-                    item.kill()
+                    item.split()
                     bullet.kill()
 
         # Draw all drawables
