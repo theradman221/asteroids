@@ -21,7 +21,6 @@ def main():
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                print(dt)
                 return
         screen.fill("#000000")
         dt = clock.tick(60)/ 1000
