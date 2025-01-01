@@ -44,6 +44,12 @@ def main():
         for item in updatable:
             item.update(dt)
 
+        # Check collisions
+        for item in asteroids:
+            if item.collision(player):
+                print("Game over!")
+                return # Quit the game if a collision with the player is detected
+
         # Draw all drawables
         for item in drawable:
             item.draw(screen)
