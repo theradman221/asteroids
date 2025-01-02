@@ -1,6 +1,4 @@
-# this allows us to use code from
-# the open-source pygame library
-# throughout this file
+# Imports
 import pygame
 from constants import *
 from player import Player
@@ -10,6 +8,7 @@ from shot import Shot
 
 def main():
     pygame.init()
+    # Leaving in these prints since they will only be seen in the CLI
     print("Starting asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
@@ -32,7 +31,6 @@ def main():
     AsteroidField.containers = (updatable)
     asteroid_field = AsteroidField()
 
-
     # Main loop
     while True:
         for event in pygame.event.get():
@@ -52,7 +50,7 @@ def main():
                 print("Game over!")
                 return # Quit the game if a collision with the player is detected
             
-            # Kill the bullet and asteroid if there is a collision of an asteroid and a bullet, will eventually add splitting
+            # Kill the bullet and if needed split the asteroid when a collision occurs.
             for bullet in shots:
                 if item.collision(bullet):
                     item.split()
@@ -66,8 +64,6 @@ def main():
         pygame.display.flip()
 
 
-
-
-
+# Auto launch main() if run from the CLI
 if __name__ == "__main__":
     main()

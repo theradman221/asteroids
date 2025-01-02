@@ -1,3 +1,4 @@
+# Imports
 from circleshape import CircleShape
 from constants import *
 import pygame
@@ -50,7 +51,7 @@ class Player(CircleShape):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
         self.position += forward * PLAYER_SPEED * dt
 
-    # Shoot a shot
+    # Shoot a shot, if enough time has passed since the last shot
     def shoot(self):
         if self.shoot_timer <= 0:
             shot = Shot(self.position[0], self.position[1], SHOT_RADIUS)

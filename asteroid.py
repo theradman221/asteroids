@@ -1,4 +1,4 @@
-# Import the required modules
+# Imports
 from circleshape import CircleShape
 import pygame
 from constants import *
@@ -18,7 +18,7 @@ class Asteroid(CircleShape):
 
     # Split a larger asteroid into smaller ones when hit with a Shot
     def split(self):
-        self.kill() # Kill the asteroid that needs to split
+        self.kill() # Kill the asteroid that got hit
         if self.radius <= ASTEROID_MIN_RADIUS:
             return # don't split asteroid that are small
 
